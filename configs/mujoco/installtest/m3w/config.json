@@ -1,0 +1,115 @@
+{
+    "algo_args":	{
+        "algo":	{
+            "batch_size":	1000,
+            "buffer_size":	1000000,
+            "fixed_order":	false,
+            "gamma":	0.995,
+            "n_step":	20,
+            "polyak":	0.01,
+            "policy_freq":	1,
+            "use_policy_active_masks":	true
+        },
+        "device":	{
+            "cuda":	true,
+            "cuda_deterministic":	true,
+            "torch_threads":	64
+        },
+        "eval":	{
+            "eval_episodes":	8,
+            "n_eval_rollout_threads":	4,
+            "use_eval":	true
+        },
+        "logger":	{
+            "log_dir":	"./results",
+            "save_model":	false,
+            "wandb":	false
+        },
+        "model":	{
+            "activation_func":	"relu",
+            "critic_lr":	0.0005,
+            "final_activation_func":	"tanh",
+            "gain":	0.01,
+            "hidden_sizes":	[
+                128,
+                128
+            ],
+            "initialization_method":	"orthogonal_",
+            "lr":	0.0005,
+            "use_feature_normalization":	true,
+            "log_std_min":	-10,
+            "log_std_max":	2,
+            "entropy_coef":	0.0001
+        },
+        "render":	{
+            "render_episodes":	10,
+            "use_render":	false
+        },
+        "seed":	{
+            "seed":	1,
+            "seed_specify":	true
+        },
+        "train":	{
+            "eval_interval":	10000,
+            "log_interval":	1000,
+            "model_dir":	null,
+            "n_rollout_threads":	4,
+            "num_env_steps":	2000000,
+            "save_interval":	10000,
+            "train_interval":	1,
+            "update_per_train":	1,
+            "use_linear_lr_decay":	false,
+            "use_proper_time_limits":	true,
+            "use_valuenorm":	false,
+            "warmup_steps":	10000
+        },
+        "world_model": {
+          "balance_coef": 0.0005,
+          "dynamics_coef": 20,
+          "enc_lr_scale": 0.3,
+          "latent_dim": 128,
+          "num_bins": 101,
+          "num_dynamics_experts": 16,
+          "num_enc_layers": 2,
+          "num_reward_experts": 16,
+          "q_coef": 0.1,
+          "reward_coef": 0.1,
+          "reward_max": 10,
+          "reward_min": -10,
+          "scale_tau": 0.01,
+          "simnorm_dim": 8,
+          "step_rho": 0.5,
+          "top_k": 2,
+          "use_twohot": true,
+          "warmup_train": true,
+          "wt_steps": 2500
+        },
+        "plan": {
+          "horizon": 3,
+          "iterations": 6,
+          "max_std": 1.0,
+          "min_std": 0.05,
+          "num_elites": 16,
+          "num_pi_trajs": 8,
+          "num_samples": 128,
+          "temperature": 0.5
+        }
+    },
+    "env_args":	{
+        "n_agents":	2,
+        "n_tasks":	2,
+        "episode_limit":	500,
+        "envs": {
+          "2_cheetah": [
+            "run",
+            "run_backwards"
+          ]
+        }
+    },
+    "main_args":	{
+        "algo":	"m3w",
+        "env":	"mujoco",
+        "exp_name":	"installtest",
+        "load_config":	""
+    }
+}

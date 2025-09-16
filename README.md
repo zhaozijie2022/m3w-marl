@@ -1,8 +1,8 @@
 # M3W: MoE-based World Model for Multi-Task Multi-Agent RL
 
 
-## Ovewview
-
+## Overview
+---
 **M3W** is a Mixture-of-Experts world model framework for multi-task multi-agent reinforcement learning.
 
 ![](assets/images_folder/framework.svg)

@@ -41,7 +41,7 @@ We extend Bi-DexHands to multi-task settings using multiprocessing, which makes 
 
 M3W achieves superior performance on both Bi-DexHands and MA-MuJoCo, showing superior sample efficiency and multi-task adaptability compared to policy-centric baselines.
 
-![](assets\images_folder\compare.png)
+![](assets/images_folder/compare.png)
 
 ## 🎥 Demos
 Here we showcase several representative task rollouts demonstrating the diverse cooperative behaviors learned by M3W.
